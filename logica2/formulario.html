@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mensagem (){
+            var nome, idade, linguagem
+            nome=document.getElementById("nome").value
+            idade=document.getElementById("idade").value
+            linguagem=document.getElementById("linguagem").value
+            alert ('olá ' + nome + ' você tem ' + idade + ' anos e já está aprendendo ' + linguagem) 
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label>Qual seu nome?</label>  
+        <input type="text" id="nome">
+        <label>Qual tua idade?</label>
+        <input type="number" id="idade">
+        <label>Qual linguagem de progamação você está estudando?</label>
+        <input type="text" id="linguagem">
+        <button onclick="mensagem ()">Enviar</button>
+    </form>
+</body>
+
+</html>
