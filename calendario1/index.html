@@ -1,0 +1,120 @@
+<!-- html/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Pessoas</title>
+  <script src="styles.css"></script>
+  <script src="script.js"></script>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.form-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+table {
+  width: 80%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+button.edit, button.remove {
+  background-color: #2196F3;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button.remove {
+  background-color: #f44336;
+}
+</style>
+</head>
+<body>
+
+  <h1>Cadastro de pessoas</h1>
+  <form class="form js-form" id="myForm" onsubmit="handleSubmit(event)">
+    <label for="name">
+      Nome
+      <input class="form-field js-field" id="name" maxlength="120" name="name" autocomplete="name" pattern="[A-Za-z]+" title="Somente letras são permitidas" required type="text">
+    </label>
+    <label for="birth-date">
+      Data de Nascimento
+      <input class="form-field js-field" id="birth-date" name="birth-date" autocomplete="bday" min="1900-01-01" max="2023-12-31" required type="date">
+    </label>
+    <button type="submit">Salvar</button>
+  </form>
+
+  <table border="1" id="dataTable">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Data de Nascimento</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="dataBody"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
